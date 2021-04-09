@@ -1,34 +1,24 @@
 <template>
   <div class="container">
     <div>
-      <Logo />
+      <img :src="mySVG" />
       <h1 class="title">
-        quiz
+        Lilly Students Quiz
       </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <NuxtLink to="/quiz">Start Quiz</NuxtLink>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Index',
+  data(){
+    return {
+      mySVG: require('../assets/images/logo.svg')
+    }
+  }
+};
 </script>
 
 <style>

@@ -7,14 +7,14 @@ module.exports = {
                         'Emilia': 0.5,
                         'Ellie': 0.7,
                     },
-                    img: '',
+                    image: 'big-frog-eyes.png',
                 },
                 'Bird': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    img: '',
+                    image: '',
                 },
             },
         },
@@ -26,14 +26,14 @@ module.exports = {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    img: '',
+                    image: '',
                 },
                 'Chicken': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    img: '',
+                    image: '',
                 },
             },
         },

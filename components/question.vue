@@ -3,13 +3,14 @@
     <div>
       <h1>Question {{ questionNum }}</h1>
       <h2>{{ title }}</h2>
-      <div v-for="(answer, answerNum) in Object.keys(answers)" :key="answerNum">
-        <button
-          :class="selected == answerNum.toString() ? 'btn-selected':''"
-          @click="passPoints(answers[answer].scores, questionNum, answerNum)"
-        >
-          {{ answer }}
-        </button>
+      <div class="answers-container">
+        <div class="answers" v-for="(answer, answerNum) in Object.keys(answers)" :key="answerNum">
+          <img
+            :src="getImgUrl(answers[answer].image)"
+            :class="selected == answerNum.toString() ? 'btn-selected btn-img' : 'btn-img'"
+            @click="passPoints(answers[answer].scores, questionNum, answerNum)"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -26,7 +27,7 @@ export default {
   data() {
     return {
       mySVG: require("../assets/images/logo.svg"),
-      selected: '',
+      selected: "",
     };
   },
   methods: {
@@ -36,18 +37,29 @@ export default {
       // Pass scores to parent
       this.$emit("setPoints", { studentScores, questionNum });
     },
+    getImgUrl(url) {
+      if (url) {
+        return require("../assets/images/" + url);
+      }
+    },
   },
 };
 </script>
 
 <style>
-button {
-  border-style: none;
-  margin-top: 10px;
-  background-color: red;
-  color: white;
+.btn-img {
+  width: 200px;
+  height: 200px;
+  border: 5px solid #555;
 }
 .btn-selected {
-  background-color: pink;
+  border: 5px solid red;
+}
+.answers-container {
+  display: flex;
+}
+.answers {
+  flex: 25%;
+  padding: 5px;
 }
 </style>

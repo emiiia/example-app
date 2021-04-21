@@ -73,5 +73,6 @@ export default {
 .submit {
   margin-top: 50px;
   background-color: black;
+  color: white;
 }
 </style>

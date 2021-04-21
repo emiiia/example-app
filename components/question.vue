@@ -6,7 +6,7 @@
       <div v-for="(answer, answerNum) in Object.keys(answers)" :key="answerNum">
         <button
           :class="selected == answerNum.toString() ? 'btn-selected':''"
-          @click="passPoints(answers[answer], questionNum, answerNum)"
+          @click="passPoints(answers[answer].scores, questionNum, answerNum)"
         >
           {{ answer }}
         </button>

@@ -24,23 +24,7 @@ export default {
   data() {
     return {
       questions,
-      scores: {
-        Emilia: 0,
-        Charlie: 0,
-        Sarah: 0,
-        Jobie: 0,
-        Ellie: 0,
-        Casey: 0,
-        Dulcie: 0,
-        Jacob: 0,
-        Ollie: 0,
-        Rosie: 0,
-        Emily: 0,
-        Abi: 0,
-        Rasneet: 0,
-        Aleeza: 0,
-        Ikhra: 0,
-      },
+      scores: {},
       selectedAnswers: {},
     };
   },
@@ -48,14 +32,22 @@ export default {
     setPoints({ studentScores, questionNum }) {
       // Add question num and scores to dict
       this.selectedAnswers[questionNum.toString()] = studentScores;
+      console.log(this.selectedAnswers)
     },
 
     addScores() {
+      // Reset scores
+      this.scores = {};
       // Add up all the scores for each answer
       Object.values(this.selectedAnswers).forEach((studentScores) => {
         Object.keys(studentScores).forEach((student) => {
           const score = studentScores[student];
-          this.scores[student] += score;
+          if (!this.scores[student]) {
+          // Add student to scores dict
+            this.scores[student] = score;
+          } else {
+            this.scores[student] += score;
+          }
         });
       });
 
@@ -63,14 +55,14 @@ export default {
       const highScore = { name: "", val: 0 };
       Object.keys(this.scores).forEach((student) => {
         const score = this.scores[student];
-        if (score > highScore["val"]) {
-          highScore["name"] = student;
-          highScore["val"] = score;
+        if (score > highScore.val) {
+          highScore.name = student;
+          highScore.val = score;
         }
       });
 
       console.log(
-        `Highest score: ${highScore["name"]}. Points: ${highScore["val"]}`
+        `Highest score: ${highScore.name}. Points: ${highScore.val}`
       );
     },
   },

@@ -1,15 +1,20 @@
 module.exports = {
-    questions: [
-        {
+    questions: [{
             title: 'What animal do you like the most?',
             answers: {
                 'Frog': {
-                    'Emilia': 0.5,
-                    'Ellie': 0.7,
+                    scores: {
+                        'Emilia': 0.5,
+                        'Ellie': 0.7,
+                    },
+                    img: '',
                 },
                 'Bird': {
-                    'Charlie': 0.9,
-                    'Jobie': 0.2,
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    img: '',
                 },
             },
         },
@@ -17,12 +22,18 @@ module.exports = {
             title: 'What food do you like the most?',
             answers: {
                 'Pie': {
-                    'Emilia': 0.5,
-                    'Ellie': 0.7,
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    img: '',
                 },
                 'Chicken': {
-                    'Charlie': 0.9,
-                    'Jobie': 0.2,
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    img: '',
                 },
             },
         },

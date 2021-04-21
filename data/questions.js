@@ -2,19 +2,33 @@ module.exports = {
     questions: [{
             title: 'What animal do you like the most?',
             answers: {
-                'Frog': {
+                'Disney': {
                     scores: {
                         'Emilia': 0.5,
                         'Ellie': 0.7,
                     },
-                    image: 'big-frog-eyes.png',
+                    image: 'disney.png',
                 },
-                'Bird': {
+                'Beach': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: '',
+                    image: 'beach.png',
+                },
+                'Forest': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'forest.png',
+                },
+                'Basingstoke': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'basingstoke.png',
                 },
             },
         },

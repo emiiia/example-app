@@ -65,5 +65,71 @@ module.exports = {
                 },
             },
         },
+        {
+            title: 'What fish would you be?',
+            answers: {
+                'Rainbow trout': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'trout',
+                },
+                'Anglerfish': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'anglerfish',
+                },
+                'Hairy frogfish': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'hairy_frogfish',
+                },
+                'Anchovy': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'anchovy',
+                },
+            },
+        },
+        {
+            title: 'Which dog is the best?',
+            answers: {
+                'Corgi': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'corgi',
+                },
+                'Golden retriever': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'golden',
+                },
+                'Husky': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'husky',
+                },
+                'Cocker spaniel': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'spaniel',
+                },
+            },
+        },
     ],
 }

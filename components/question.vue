@@ -10,15 +10,20 @@
           v-for="(answer, answerNum) in Object.keys(answers)"
           :key="answerNum"
         >
-          <img
-            :src="getImgUrl(answers[answer].image)"
+          <div
             :class="
               selected == answerNum.toString()
-                ? 'btn-selected btn-img'
-                : 'btn-img'
+                ? 'img-selected img-container'
+                : 'img-container'
             "
-            @click="passPoints(answers[answer].scores, questionNum, answerNum)"
-          />
+          >
+            <img
+              :src="getImgUrl(answers[answer].image)"
+              @click="
+                passPoints(answers[answer].scores, questionNum, answerNum)
+              "
+            />
+          </div>
           <div class="answer-title">
             {{ answer }}
           </div>
@@ -81,21 +86,32 @@ export default {
 }
 .answers {
   display: inline-block;
-  padding: 40px;
+  margin: 40px;
+}
+
+.img-container {
+  overflow: hidden;
+  border: 5px solid white;
+}
+
+.img-selected {
+  border: 5px solid goldenrod;
+}
+
+.img-container img {
+  display: block;
+  transition: transform 0.4s;
+  width: 300px;
+  height: 300px;
+}
+
+.img-container:hover img {
+  transform: scale(1.1);
+  transform-origin: 50% 50%;
 }
 
 .answer-title {
   padding-top: 40px;
   font: bold 24px Arial;
-}
-
-.btn-img {
-  width: 300px;
-  height: 300px;
-  border: 5px solid #555;
-}
-
-.btn-selected {
-  border: 5px solid goldenrod;
 }
 </style>

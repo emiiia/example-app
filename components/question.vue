@@ -56,7 +56,7 @@ export default {
     },
     getImgUrl(url) {
       if (url) {
-        return require("../assets/images/" + url);
+        return require(`../assets/images/q${this.questionNum}/${url}.png`);
       }
     },
   },

@@ -1,53 +1,67 @@
 module.exports = {
     questions: [{
-            title: 'What animal do you like the most?',
+            title: 'Choose a holiday destination',
             answers: {
                 'Disney': {
                     scores: {
                         'Emilia': 0.5,
                         'Ellie': 0.7,
                     },
-                    image: 'disney.png',
+                    image: 'disney',
                 },
                 'Beach': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: 'beach.png',
+                    image: 'beach',
                 },
                 'Forest': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: 'forest.png',
+                    image: 'forest',
                 },
                 'Basingstoke': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: 'basingstoke.png',
+                    image: 'basingstoke',
                 },
             },
         },
         {
-            title: 'What food do you like the most?',
+            title: 'What would you pick for dinner?',
             answers: {
-                'Pie': {
+                'Burger': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: '',
+                    image: 'burger',
                 },
-                'Chicken': {
+                'Onion': {
                     scores: {
                         'Charlie': 0.9,
                         'Jobie': 0.2,
                     },
-                    image: '',
+                    image: 'onion',
+                },
+                'Ramen': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'ramen',
+                },
+                'Roast': {
+                    scores: {
+                        'Charlie': 0.9,
+                        'Jobie': 0.2,
+                    },
+                    image: 'roast',
                 },
             },
         },

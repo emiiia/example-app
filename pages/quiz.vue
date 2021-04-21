@@ -52,7 +52,17 @@ export default {
           this.scores[student] += score;
         });
       });
-      console.log(this.scores);
+
+      const highScore = { name: '', val: 0 };
+      Object.keys(this.scores).forEach((student) =>  {
+        const score = this.scores[student]
+        if (score > highScore['val']) {
+          highScore['name'] = student;
+          highScore['val'] = score;
+        }
+      });
+      
+      console.log(`Highest score: ${highScore['name']}. Points: ${highScore['val']}`);
     },
   },
 };

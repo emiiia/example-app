@@ -1,12 +1,15 @@
 <template>
   <div class="header">
     <div>
-      <h1>
-        Question {{ questionNum }}
-      </h1>
+      <h1>Question {{ questionNum }}</h1>
       <h2>{{ title }}</h2>
-      <div v-for="(answer, index) in Object.keys(answers)" :key="index">
-        <button @click="passPoints(answers[answer], questionNum)">{{ answer }}</button>
+      <div v-for="(answer, answerNum) in Object.keys(answers)" :key="answerNum">
+        <button
+          :class="selected == answerNum.toString() ? 'btn-selected':''"
+          @click="passPoints(answers[answer], questionNum, answerNum)"
+        >
+          {{ answer }}
+        </button>
       </div>
     </div>
   </div>
@@ -14,23 +17,26 @@
 
 <script>
 export default {
-  name: 'Question',
+  name: "Question",
   props: {
-      questionNum: Number,
-      title: String,
-      answers: Object,
+    questionNum: Number,
+    title: String,
+    answers: Object,
   },
-  data(){
+  data() {
     return {
-      mySVG: require('../assets/images/logo.svg')
-    }
+      mySVG: require("../assets/images/logo.svg"),
+      selected: '',
+    };
   },
   methods: {
-    passPoints(studentScores, questionNum) {
-      this.$emit('setPoints', { studentScores, questionNum });
-    }
-  }
-
+    passPoints(studentScores, questionNum, answerNum) {
+      // Update selected answer
+      this.selected = answerNum.toString();
+      // Pass scores to parent
+      this.$emit("setPoints", { studentScores, questionNum });
+    },
+  },
 };
 </script>
 
@@ -40,5 +46,8 @@ button {
   margin-top: 10px;
   background-color: red;
   color: white;
+}
+.btn-selected {
+  background-color: pink;
 }
 </style>

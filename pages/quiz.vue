@@ -8,7 +8,7 @@
         @setPoints="setPoints"
       />
     </div>
-    <button class="submit" @click="addScores">Submit Answers</button>
+    <button class="submit" @click="addScores">Finish</button>
   </div>
 </template>
 
@@ -71,8 +71,11 @@ export default {
 
 <style scoped>
 .submit {
-  margin-top: 50px;
-  background-color: black;
+  background-color: darksalmon;
   color: white;
+  margin: 50px;
+  font: italic bold 32px Arial;
+  width: 200px;
+  height: 50px;
 }
 </style>

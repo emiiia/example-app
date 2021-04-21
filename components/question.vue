@@ -1,8 +1,9 @@
 <template>
   <div class="header">
     <div>
-      <h1>Question {{ questionNum }}</h1>
-      <h2>{{ title }}</h2>
+      <div class="question">
+        <h2>{{ title }}</h2>
+      </div>
       <div class="answers-container">
         <div class="answers" v-for="(answer, answerNum) in Object.keys(answers)" :key="answerNum">
           <img
@@ -47,6 +48,31 @@ export default {
 </script>
 
 <style>
+.question {
+  margin: auto;
+  background-color: darkcyan;
+  width: 70%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 60px;
+}
+
+.question h2 {
+  color: white;
+  font: italic bold 60px Arial;
+}
+
+.answers-container {
+  margin: auto;
+}
+.answers {
+  display: inline-block;
+  padding: 10px;
+}
+
 .btn-img {
   width: 200px;
   height: 200px;
@@ -54,12 +80,5 @@ export default {
 }
 .btn-selected {
   border: 5px solid red;
-}
-.answers-container {
-  display: flex;
-}
-.answers {
-  flex: 25%;
-  padding: 5px;
 }
 </style>

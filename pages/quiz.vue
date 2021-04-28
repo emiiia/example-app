@@ -8,34 +8,51 @@
         @setPoints="setPoints"
       />
     </div>
-    <button class="submit" @click="addScores">Finish</button>
+    <a class="submit" @click="addScores" tag="button">Finish</a>
+    <Finish
+      id="trueSelfDiv"
+      v-if="finished"
+      :trueSelf="highScore"
+    />
   </div>
 </template>
 
 <script>
 import Question from "../components/question.vue";
+import Finish from '../components/finish.vue';
 import { questions } from "../data/questions";
+import VueSmoothScroll from 'vue2-smooth-scroll'
 
 export default {
   name: "Index",
   components: {
     Question,
+    Finish,
+    VueSmoothScroll,
   },
   data() {
     return {
       questions,
       scores: {},
       selectedAnswers: {},
+      highScore: {},
+      finished: false,
     };
   },
   methods: {
     setPoints({ studentScores, questionNum }) {
       // Add question num and scores to dict
       this.selectedAnswers[questionNum.toString()] = studentScores;
-      console.log(this.selectedAnswers)
     },
 
     addScores() {
+      // If all questions haven't been answered, don't submit
+      if (Object.keys(this.selectedAnswers).length !== this.questions.length){
+        return
+      }
+
+      this.$router.push("#trueSelfDiv");
+
       // Reset scores
       this.scores = {};
       // Add up all the scores for each answer
@@ -52,17 +69,18 @@ export default {
       });
 
       // Get the highest score
-      const highScore = { name: "", val: 0 };
+      this.highScore = { name: "", val: 0 };
       Object.keys(this.scores).forEach((student) => {
         const score = this.scores[student];
-        if (score > highScore.val) {
-          highScore.name = student;
-          highScore.val = score;
+        if (score > this.highScore.val) {
+          this.highScore.name = student;
+          this.highScore.val = score;
         }
       });
+      this.finished = true;
 
       console.log(
-        `Highest score: ${highScore.name}. Points: ${highScore.val}`
+        `Highest score: ${this.highScore.name}. Points: ${this.highScore.val}`
       );
     },
   },
@@ -77,5 +95,11 @@ export default {
   font: italic bold 32px Arial;
   width: 200px;
   height: 50px;
+  padding: 5px 10px 5px 10px;
+  margin-bottom: 60px;
+}
+
+.header {
+  margin-bottom: 50px;
 }
 </style>

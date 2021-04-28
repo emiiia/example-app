@@ -8,7 +8,7 @@
         @setPoints="setPoints"
       />
     </div>
-    <a class="submit" @click="addScores" tag="button">Finish</a>
+    <button v-if="!finished" class="submit" @click="addScores" tag="button">Finish</button>
     <Finish
       id="trueSelfDiv"
       v-if="finished"
@@ -51,8 +51,6 @@ export default {
         return
       }
 
-      this.$router.push("#trueSelfDiv");
-
       // Reset scores
       this.scores = {};
       // Add up all the scores for each answer
@@ -78,10 +76,12 @@ export default {
         }
       });
       this.finished = true;
+      this.$router.push("#trueSelfDiv");
 
       console.log(
         `Highest score: ${this.highScore.name}. Points: ${this.highScore.val}`
       );
+      console.log(this.scores)
     },
   },
 };

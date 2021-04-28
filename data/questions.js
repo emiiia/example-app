@@ -164,7 +164,7 @@ module.exports = {
                 'Golden retriever': {
                     scores: {
                         'Charlie': 0.3,
-                        'Jobie': 0,
+                        'Jobie': 0.5,
                         'Ellie': 0.1,
                         'Emilia': 0.4,
                         'Dulcie': 0.1,
@@ -186,7 +186,7 @@ module.exports = {
                 'Cocker spaniel': {
                     scores: {
                         'Charlie': 0.3,
-                        'Jobie': 1,
+                        'Jobie': 0.5,
                         'Ellie': 0.1,
                         'Emilia': 0.5,
                         'Dulcie': 0.4,

@@ -70,7 +70,12 @@ export default {
       this.highScore = { name: "", val: 0 };
       Object.keys(this.scores).forEach((student) => {
         const score = this.scores[student];
-        if (score > this.highScore.val) {
+
+        // If equal, prioritise Dulcie
+        if (score == this.highScore.val && student == "Dulcie") {
+          this.highScore.name = student;
+          this.highScore.val = score;
+        } else if (score > this.highScore.val) {
           this.highScore.name = student;
           this.highScore.val = score;
         }
